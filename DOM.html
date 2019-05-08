@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+<style>
+    .keski {
+        margin: auto;
+        width: 33.33%;
+    }
+#container {
+    width: 400px;
+    height: 400px;
+    position: center;
+   
+    background-image:url("Tausta.jpg"); 
+}
+#animate {
+
+    animation-name: Paasiainen;
+    visibility: visible;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    animation: infinite;
+    animation-duration: 10s;
+    animation-direction: alternate;
+
+    background-image:url("Pääsiäisnoita.jpg");
+}
+
+}
+</style>
+<body>
+<script>
+        function myMove() {
+            var elem = document.getElementById("animate");   
+            var pos = 0;
+            var id = setInterval(frame, 5);
+            function frame() {
+            if (pos == 350) {
+            clearInterval(id);
+            } else {
+            pos++; 
+            elem.style.top = pos + "px"; 
+            elem.style.left = pos + "px"; 
+        }
+    }
+}
+</script>
+
+    <div class="keski">
+    <h2>Pääsiäislento</h2>  
+    <p><button onclick="myMove()">Paina tästä</button></p>
+
+
+<div id="container">
+<div id="animate">
+</div>
+</body>
+
+</html>
